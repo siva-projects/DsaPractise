@@ -203,4 +203,26 @@ public class doubleLinkedList{
 		}
 		deleteAtIndex(index);
 	}
+
+	public void reverse()
+	{
+		display();
+		if(head==null || head.next==null)
+		{
+			System.out.println("only 1 node or 0 node present");
+			return;
+		}
+		Node back = null;
+		Node temp = head.next;
+		System.out.println(head.value+": head, temp "+temp.value);
+		while(temp!=null)
+		{
+			head.next = back;
+			back=head;
+			head=temp;
+			temp=temp.next;
+		}
+		head.next=back;
+		display();
+	}
 }
