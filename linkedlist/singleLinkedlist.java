@@ -76,8 +76,8 @@ public void insertFirst(int val){
     node.next=head;
     head=node;
 
-    // if(tail == null)
-    //     tail = head;
+    if(tail == null)
+        tail = head;
     
     size += 1;
 }
