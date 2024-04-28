@@ -3,20 +3,20 @@ package linkedlist;
 import java.util.LinkedList;
 
 public class linkedlistInterviewQuestions{
-	private static Node head;
-	private static Node tail;
+	private static ListNode head;
+	private static ListNode tail;
 	private static int size;
 	public linkedlistInterviewQuestions() {
 		this.size = 0;
 	}
-	private class Node{
+	private class ListNode{
 		private int value;
-		private Node next;
-		public Node(int value)
+		private ListNode next;
+		public ListNode(int value)
 		{
 			this.value = value;
 		}
-		public Node(int value, Node next)
+		public ListNode(int value, ListNode next)
 		{
 			this.value = value;
 			this.next = next;
@@ -34,19 +34,19 @@ public class linkedlistInterviewQuestions{
 	
 	
 	
-	public Node recursiveInsert(int value, int index, Node head) {
+	public ListNode recursiveInsert(int value, int index, ListNode head) {
 		// handled in a way such that if index is > 0 and < size , this will trigger
-		Node temp = head;
+		ListNode temp = head;
 		if(index == 0)
 		{
 			System.out.println("Inserting value : "+value+" in index : "+index);
-			Node node = new Node(value);
+			ListNode node = new ListNode(value);
 			node.next = head;
 			size += 1;
 			return node;
 		}
 		size += 1;
-		Node node = recursiveInsert(value, index-1, head.next);
+		ListNode node = recursiveInsert(value, index-1, head.next);
 		head.next = node;
 		return head;
 	}
@@ -54,12 +54,12 @@ public class linkedlistInterviewQuestions{
 	
 // question-1	 remove duplicated from a list 
 	// 1 -> 1 -> 2  Expected Output should be 1 -> 2
-//	public Node deleteDuplicates(Node head) {
+//	public ListNode deleteDuplicates(ListNode head) {
 //        if(head == null || head.next == null)
 //        {
 //            return head;
 //        }
-//        Node first = head, second = head.next;
+//        ListNode first = head, second = head.next;
 //        while(second!=null)
 //        {
 //            if(first.value == second.value)
@@ -80,26 +80,26 @@ public class linkedlistInterviewQuestions{
 	
 // Question-2  Given two sorted lists , they have to be merged together in a sorted way
 	// list1 = 1 -> 2 -> 4 ; list2 = 1 -> 3 -> 4 ; Expected Output = 1 - > 1 - > 2 - > 3 - > 4 - > 4
-//	public Node mergeTwoLists(Node list1, Node list2) {
+//	public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 //        if(list1 == null)
 //            return list2;
 //        else if(list2 == null)
 //            return list1;
 //        else{
-//        Node first = list1;
-//        Node second = list2;
-//        Node mergedList = new Node();
-//        Node ans = mergedList;
+//        ListNode first = list1;
+//        ListNode second = list2;
+//        ListNode mergedList = new ListNode();
+//        ListNode ans = mergedList;
 //        while(first != null && second != null)
 //        {
 //            // System.out.println(first.value+" : first, second: "+second.value);
 //            if(first.value < second.value)
 //            {
-//                Node node = new Node(first.value);
+//                ListNode node = new ListNode(first.value);
 //                first = first.next;
 //                mergedList.next = node;
 //            }else{
-//                Node node = new Node(second.value);
+//                ListNode node = new ListNode(second.value);
 //                second = second.next;
 //                mergedList.next = node;
 //            }
@@ -107,14 +107,14 @@ public class linkedlistInterviewQuestions{
 //        }
 //        while(first!=null)
 //        {
-//            Node node = new Node(first.value);
+//            ListNode node = new ListNode(first.value);
 //            first = first.next;
 //            mergedList.next = node;
 //            mergedList = mergedList.next;
 //        }
 //        while(second != null)
 //        {
-//            Node node = new Node(second.value);
+//            ListNode node = new ListNode(second.value);
 //            second = second.next;
 //            mergedList.next = node;
 //            mergedList = mergedList.next;
@@ -128,9 +128,9 @@ public class linkedlistInterviewQuestions{
 	
 	
 // Question - 3 Linked List Cycle
-	public boolean hasCycle(Node head) {
-        Node fast = head;
-        Node slow = head; 
+	public boolean hasCycle(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head; 
         
         while(fast != null && fast.next != null){
             fast = fast.next.next;
@@ -145,10 +145,10 @@ public class linkedlistInterviewQuestions{
 	
 	
 	// length of linked list cycle
-	public int linkedListLength(Node head)
+	public int linkedListLength(ListNode head)
 	{
-		Node fast = head;
-        Node slow = head; 
+		ListNode fast = head;
+        ListNode slow = head; 
         
         while(fast != null && fast.next != null){
             fast = fast.next.next;
@@ -172,10 +172,10 @@ public class linkedlistInterviewQuestions{
 	
 // Question - 4 Linked list cycle II
 // leetcode link  -  https://leetcode.com/problems/linked-list-cycle-ii/description/
-	public Node detectCycle(Node head) {
-        Node fast = head;
-        Node slow = head; 
-        Node temp =head;
+	public ListNode detectCycle(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head; 
+        ListNode temp =head;
         
         while(fast != null && fast.next != null){
             fast = fast.next.next;
@@ -187,7 +187,7 @@ public class linkedlistInterviewQuestions{
         }
         return null;
     }
-    public Node findlen(Node fast,Node slow,Node head)
+    public ListNode findlen(ListNode fast,ListNode slow,ListNode head)
     {
         int len = 0;
         do{
@@ -273,9 +273,9 @@ public class linkedlistInterviewQuestions{
 // Question 6 - Middle of a linked List 
 // Leetcode link - https://leetcode.com/problems/middle-of-the-linked-list/description/
     
-    public Node middleNode(Node head) {
-        Node slow = head;
-        Node fast = head;
+    public ListNode middleNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
         while(fast!=null && fast.next!= null){
             slow = slow.next;
             fast = fast.next.next;
@@ -305,13 +305,13 @@ public class linkedlistInterviewQuestions{
 // just return a linked list and return the head;
  
     
-    public Node reverseList(Node head) {
+    public ListNode reverseList(ListNode head) {
         if(head==null || head.next==null)
 		{
 			return head;
 		}
-		Node back = null;
-		Node temp = head.next;
+		ListNode back = null;
+		ListNode temp = head.next;
 		while(temp!=null)
 		{
 			head.next = back;
@@ -326,12 +326,12 @@ public class linkedlistInterviewQuestions{
    
 // Doing the same reversing list , this time using recursion 
     
-    public Node reverseListUsingRecursion(Node head) {
+    public ListNode reverseListUsingRecursion(ListNode head) {
         if(head==null || head.next==null)
 		{
 			return head;
 		}
-        Node ans = head;
+        ListNode ans = head;
         while(ans.next!=null)
         {
             ans = ans.next;
@@ -341,24 +341,226 @@ public class linkedlistInterviewQuestions{
         return ans;
     }
 
-    public Node reverse(Node node)
+    public ListNode reverse(ListNode node)
     {
         if(node.next == null)
         {
             return node;
         }
-        Node first = reverse(node.next);
+        ListNode first = reverse(node.next);
         first.next = node;
         return node;
     }
     
     
+    
+    
+/// Question 9 - Reverse a linked list II , 
+/// leetcode - https://leetcode.com/problems/reverse-linked-list-ii/description/
+ 
+    // Kushal approach
+    
+//    public ListNode reverseBetween(ListNode head, int left, int right) {
+//        if(left == right )
+//        {
+//        	return head;
+//        }
+//        
+//        // skip the first left-1 nodes
+//        ListNode current = head;
+//        ListNode prev = null;
+//        for(int i=0; current != null && i < left - 1;i++)
+//        {
+//        	prev = current;
+//        	current = current.next;
+//        }
+//        
+//        ListNode last = prev;
+//        ListNode newEnd = current;
+//        
+//        // reverse betweeen left and right
+//        ListNode next = current.next;
+//        for(int i=0; current != null && i < right - left + 1;i++)
+//        {
+//        	current.next = prev;
+//        	prev= current;
+//        	current = next;
+//        	if(next!=null)
+//        	{
+//        		next = next.next;
+//        	}
+//        }
+//        
+//        if(last != null)
+//        	last.next = prev;
+//        else
+//        	head = prev;
+//        
+//        newEnd.next = current;
+//        return head;
+//    }
+    
+    
+// my approach 
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if(head.next == null || right-left==0){
+            return head;
+        }
+        ListNode dummy = new ListNode(-1, head);
+        // skipping left-1 nodes
+        ListNode prev=dummy;
+        ListNode curr=head;
+        for(int i=0;i<left-1;i++){
+            prev = curr;
+            curr = curr.next;
+        }
+        ListNode reversedHead = reverseBasedOnNumber(curr, right-left);
+        prev.next = reversedHead;
+        return dummy.next;
+    }
+    public ListNode reverseBasedOnNumber(ListNode head, int n){
+            if(head.next == null){
+                    return head;
+                }
+                ListNode temp = head;
+                ListNode back = null;
+                ListNode first = head;
+                ListNode second = head.next;
+                for(int i=0;i<n;i++){
+                    first.next = back;
+                    back=first;
+                    first=second;
+                    second = second.next;
+                }
+                first.next=back;
+                temp.next = second;
+                return first;
+    }
+    }
+ //////////////////////////////////
+ 
+ 
+ //Question - 10    Palindrome linked list
+ // leetcode link - https://leetcode.com/problems/palindrome-linked-list/description/
+ 
+ public boolean isPalindrome(ListNode head) {
+     ListNode temp = head;
+     ListNode newListHead = new ListNode(temp.value);
+
+     ListNode temp2= newListHead;
+     temp=temp.next;
+     while(temp!=null)
+     {
+         ListNode node= new ListNode(temp.value);
+         temp2.next = node;
+         temp2=temp2.next;
+         temp = temp.next;
+     }
+     ListNode reverseListNode = reversePalindrome(newListHead);
+     while(head!=null)
+     {
+         if(head.value != reverseListNode.value){
+             return false;
+         }else{
+             head = head.next;
+             reverseListNode = reverseListNode.next;
+         }
+     }
+     return true;
+
+ }
+
+ public ListNode reversePalindrome(ListNode head){
+     if(head.next == null){return head;}
+     ListNode back = null;
+     ListNode first = head;
+     ListNode second = head.next;
+     while(second!=null)
+     {
+         first.next = back;
+         back = first;
+         first = second;
+         second= second.next;
+     }	
+     first.next = back;
+     return first;
+ }
+ 
+ 
+ 
+ //////////////////
+ // Question 11 - Reorder List 
+ // leetcode link - https://leetcode.com/problems/reorder-list/description/
+ 
+ public void reorderList(ListNode head) {
+     if(head.next == null){ return ; }
+     int length = 0;
+     ListNode t = head;
+     while(t.next!=null){ length = length + 1; t=t.next;}
+     
+     ListNode first = head, second = createAndReturnNewList(head);
+     ListNode temp = first.next;
+     for(int i=0;i<=length-1;i++)
+     {
+         first.next = second;
+         first = second;
+         second=temp;
+         temp = first.next;
+     }
+     first.next = null;
+     return ;
+ }
+
+ public ListNode createAndReturnNewList(ListNode head){
+     
+     ListNode temp = head;
+     ListNode newListHead = new ListNode(temp.value);
+
+  ListNode temp2= newListHead;
+  temp=temp.next;
+  while(temp!=null)
+  {
+      ListNode node= new ListNode(temp.value);
+      temp2.next = node;
+      temp2=temp2.next;
+      temp = temp.next;
+  }
+  return reverse(newListHead);
+ }
+
+ public ListNode reverse(ListNode head){
+     if(head.next == null){
+         return head;
+     }
+     ListNode back = null;
+     ListNode first = head;
+     ListNode second = head.next;
+     while(second!=null){
+         first.next = back;
+         back=first;
+         first=second;
+         second = second.next;
+     }
+     first.next=back;
+     return first;
+ }
+ public void display(ListNode head){
+     while(head!=null){
+         System.out.print(head.value+" -> ");
+         head = head.next;
+     }
+     System.out.println("");
+ }
+ 
+ 
+ //////////////////////////////////////////////////////////////////////////////////
+   
 ////////////////////////////////////////////////////////////////////////////////////
     
 	
-	public Node insertFirst(int value)
+	public ListNode insertFirst(int value)
 	{
-		Node node = new Node(value);
+		ListNode node = new ListNode(value);
 		node.next = head;
 		head = node;
 		
@@ -368,14 +570,14 @@ public class linkedlistInterviewQuestions{
 		size += 1;
 		return head;
 	}
-	public Node insertLast(int value)
+	public ListNode insertLast(int value)
 	{
 		if(tail == null)
 		{
 			insertFirst(value);
 			return null;
 		}
-		Node node = new Node(value);
+		ListNode node = new ListNode(value);
 		tail.next=node;
 		tail = node;
 		size += 1;
@@ -384,7 +586,7 @@ public class linkedlistInterviewQuestions{
 	}
 	public void display()
 	{
-		Node temp = head;
+		ListNode temp = head;
 		if(temp == null) {
 			System.out.println("LinkedList is empty ");
 		}
@@ -397,3 +599,7 @@ public class linkedlistInterviewQuestions{
 		System.out.println("");
 	}
 }
+
+
+
+// pending Questions -   15, 16, 17 
