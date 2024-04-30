@@ -598,8 +598,60 @@ public class linkedlistInterviewQuestions{
 		}
 		System.out.println("");
 	}
+
+
+
+// Queston 17 - Rotate Linked LIst 
+// Leetcode link - https://leetcode.com/problems/rotate-list/
+
+public ListNode rotateRight(ListNode head, int k) {
+    if(head==null || head.next == null ){
+        return head;
+    }
+    // finding length
+    int len=1;
+    ListNode temp = head;
+    while(temp.next!=null){
+        len += 1;
+        temp = temp.next;
+    }
+    if(k<len){
+    return reverseListOnDemand(head, k);
+    }else{
+    return reverseListOnDemand(head, (k%len));
+    }
+}
+public ListNode reverseListOnDemand(ListNode head, int k){
+    if(head.next == null){
+        return head;
+    }
+    ListNode first = head;
+    ListNode second = head.next;
+   for(int i=0;i<k;i++){
+        ListNode newHead = Need(head, first, second);
+        head = newHead;
+        first = head;
+        second = head.next;
+   }
+   return head;
 }
 
+public ListNode Need(ListNode head, ListNode first, ListNode second){
+    while(second.next!=null){
+        first = first.next;
+        second = second.next;
+    }
+    first.next=null;
+    second.next = head;
+    head = second;
+    return head;
+}
+
+}
+//////////////////////////////////////////////////////////////////
 
 
-// pending Questions -   15, 16, 17 
+// pending Questions -   15, 16
+
+//https://leetcode.com/problems/add-two-numbers/description/
+
