@@ -80,7 +80,7 @@ class avlTree {
 			if(height(node.right.left) - height(node.right.right) < 0){ // means right right case
 				return leftRotate(node);
 			}
-			if(height(node.right.left) - height(node.right.right) > 0){ // means left right case
+			if(height(node.right.left) - height(node.right.right) > 0){ // means right left case
 				node.right = rightRotate(node.right);
 				return leftRotate(node);
 			}
@@ -97,8 +97,8 @@ class avlTree {
 		c.right = p;
 		p.left = t;
 		
-		p.height = Math.max(height(p.left), height(p.right) + 1);
-		c.height = Math.max(height(c.left), height(c.right) + 1);
+		p.height = Math.max(height(p.left), height(p.right)) + 1;
+		c.height = Math.max(height(c.left), height(c.right)) + 1;
 	
 		return c;
 	  }
@@ -112,8 +112,8 @@ class avlTree {
 		p.left = c;
 		c.right = t;
 
-		p.height = Math.max(height(p.left), height(p.right) + 1);
-		c.height = Math.max(height(c.left), height(c.right) + 1);
+		p.height = Math.max(height(p.left), height(p.right)) + 1;
+		c.height = Math.max(height(c.left), height(c.right)) + 1;
 
 		return p;
 	 }
