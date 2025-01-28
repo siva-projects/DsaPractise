@@ -1,0 +1,39 @@
+Question - 1
+- https://leetcode.com/problems/binary-tree-level-order-traversal/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the BFS approach along with queue to Solve the above problem...
+
+Question - 2
+https://leetcode.com/problems/average-of-levels-in-binary-tree/submissions/1520810559/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the BFS approach along with queue to Solve the above problem...
+
+
+Question 3 - levelOrderSuccesor
+find it in the bfs.java file...
+
+Question 4 - binary-tree-zigzag-level-order-traversal
+https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the BFS approach along with queue to Solve the above problem...
+
+Question 5 - https://leetcode.com/problems/binary-tree-level-order-traversal-ii/description/
+- navigate to above question link, and there ans can be found in the submissions..
+- Ans can be found in two approaches using BFS approach and using BFS approach along with Recursion...
+
+Question 6 - https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the BFS approach here as well...
+
+Question 7 - https://leetcode.com/problems/binary-tree-right-side-view/description/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the BFS approach here as well...
+
+Question 8 - https://leetcode.com/problems/cousins-in-binary-tree/description/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the BFS approach here as well...
+
+Question 9 - 
+-- approach diagram is in the one note 
+- navigate to above question link, and there ans can be found in the submissions..
+- used the BFS approach here as well...
