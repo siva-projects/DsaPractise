@@ -37,3 +37,44 @@ Question 9 -
 -- approach diagram is in the one note 
 - navigate to above question link, and there ans can be found in the submissions..
 - used the BFS approach here as well...
+
+
+Depth First Search Question - 
+
+Question 1 - https://leetcode.com/problems/diameter-of-binary-tree/solutions/6170309/video-using-dfs-step-by-step-algorithm/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the height and POST ORDER Traverse in  DFS to arrive at a solutions
+
+Question 2 - https://leetcode.com/problems/invert-binary-tree/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the POST ORDER Traverse in  DFS to arrive at a solutions
+
+Question 3 - https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the POST ORDER Traverse in  DFS to arrive at a solutions
+
+Question 4 - https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the POST ORDER Traverse in  DFS to arrive at a solutions
+
+Question 5 - https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the POST ORDER Traverse in  DFS to arrive at a solutions
+
+Question 6 - https://leetcode.com/problems/validate-binary-search-tree/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the POST ORDER Traverse in  DFS to arrive at a solutions
+
+Question 7 - https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/ 
+
+Question 8 - https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the In ORDER Traverse in  DFS to arrive at a solutions
+
+Question 9 - https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+- navigate to above question link, and there ans can be found in the submissions..
+- used the arrays and  Traversal related topics to arrive at a solutions
+
+Question 10 - https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
+- navigate to above question link, and there ans can be found in the submissions..
+- 

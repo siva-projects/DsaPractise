@@ -56,6 +56,7 @@ public class BFS {
         int[] arr = {3,4,8,12,14,7,11,36,9,2,44};
         btree.construct( arr);
         btree.prettyDisplay();
+        btree.PostOrderPractise();
         System.out.println(btree.levelOrderSuccesor(44));
     }
 
@@ -94,4 +95,20 @@ public class BFS {
         return element;
 
     }
+
+    public void PostOrderPractise(){
+        PostOrderPractise(root);
+    }
+    // DFS , post order practise
+    public  void PostOrderPractise(Node node){
+        if(node == null){
+            return ;
+        }
+        PostOrderPractise(node.left);
+        PostOrderPractise(node.right);
+        
+        System.out.println("value : "+node.value);
+        return;
+    }
+
 }
