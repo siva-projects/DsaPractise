@@ -53,11 +53,13 @@ public class BFS {
     public static void main(String[] args) {
         System.out.println("testing the BFS");
         BFS btree = new BFS();
-        int[] arr = {3,4,8,12,14,7,11,36,9,2,44};
+        int[] arr = {3,5,9,1,2,10,12,22,33,44,55,16,66,8,77};
         btree.construct( arr);
         btree.prettyDisplay();
-        btree.PostOrderPractise();
-        System.out.println(btree.levelOrderSuccesor(44));
+        int[] pathArray = {3, 9 , 12, 18};
+        System.out.println(btree.pathExists(pathArray));
+        // btree.PostOrderPractise();
+        // System.out.println(btree.levelOrderSuccesor(44));
     }
 
 
@@ -111,4 +113,28 @@ public class BFS {
         return;
     }
 
+
+
+
+    // Question 23 path exists in binary tree from root to leaf
+    public boolean pathExists(int[] arr){
+        return pathExists(arr, root, 0);
+    }
+    public  boolean pathExists(int[] arr, Node node, int index){
+           if(node == null){
+            return false;
+           }
+
+           if(node.value != arr[index] || index >= arr.length){
+            return false;
+           }
+           if(node.left == null && node.right == null && index == arr.length - 1){
+            return true;
+           }
+           return pathExists(arr, node.left, index+1) || pathExists(arr, node.right, index+1);
+    }
+
+    
+    // DFS using stack ...
+    
 }

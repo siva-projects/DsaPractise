@@ -77,4 +77,16 @@ Question 9 - https://leetcode.com/problems/construct-binary-tree-from-preorder-a
 
 Question 10 - https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
 - navigate to above question link, and there ans can be found in the submissions..
-- 
+- used preorder to solve the question 
+
+Question 11 - https://leetcode.com/problems/path-sum/description/ 
+- navigate to above question link, and there ans can be found in the submissions..
+- used preorder to solve the question 
+
+Question 12 - https://leetcode.com/problems/sum-root-to-leaf-numbers/
+- navigate to above question link, and there ans can be found in the submissions..
+- used preorder to solve the question 
+
+Question 13 - https://leetcode.com/problems/binary-tree-maximum-path-sum/description/
+- navigate to above question link, and there ans can be found in the submissions..
+- used postorder to solve the question 
